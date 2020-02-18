@@ -1,0 +1,19 @@
+.image {
+    background: url("https://images.unsplash.com/photo-1535919020263-f79f5313f336?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80") no-repeat fixed;
+    background-position: center center;
+    background-size: cover;
+    min-height: 250px;
+    /* opacity: 0.1; */
+    background-color: #000; 
+    /* opacity:0.8; */
+    
+    }
+    .content {
+    max-width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    }
