@@ -1,3 +1,6 @@
+<?php
+include('backend/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,29 +91,29 @@
 
     <div class="card-body px-lg-5 pt-0">
 
-      <form class=" p-5">
+      <form class=" p-5" method="POST" action="" enctype="multipart/form-data">
 
         <p class="h4 mb-4 text-center"></p>
         <div class="input-group">
           <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile01"
+            <input type="file" class="custom-file-input" name="myfile" accept=".pdf" id="inputGroupFile01"
               aria-describedby="inputGroupFileAddon01">
             <label class="custom-file-label" for="inputGroupFile01">select a .pdf file</label>
           </div>
         </div> <br>
     
-        <input type="text" id="" class="form-control mb-4" placeholder="Enter book title">
+        <input type="text" id="" name="booktitle" class="form-control mb-4" placeholder="Enter book title">
 
-        <input type="text" id="" class="form-control mb-4" placeholder="Enter Authors Name">
+        <input type="text" id=""  name="author" class="form-control mb-4" placeholder="Enter Authors Name">
 
     
 
         <div class=" amber-textarea active-amber-textarea-2">
           <i class="fas fa-pencil-alt prefix"></i>
-          <textarea id="form24" name="definition" class="md-textarea form-control" id="editor" rows="3" placeholder="Enter a brief book definition"></textarea>          
+          <textarea id="form24" name="description" class="md-textarea form-control" id="editor" rows="3" placeholder="Enter a brief book description"></textarea>          
         </div>
     
-        <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>   
+        <button class="btn btn-info btn-block my-4" name="add-book" type="submit">Add book</button>   
       
     </form>
     </div>
@@ -198,7 +201,7 @@
   
 <script>
   // Replace the <textarea> with a CKEditor
-  CKEDITOR.replace('definition');
+  CKEDITOR.replace('description');
 </script>
 
 </body>

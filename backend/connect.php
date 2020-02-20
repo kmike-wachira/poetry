@@ -55,6 +55,29 @@
     }
     
   }
+// add a book 
+if(isset($_POST['add-book'])){
+  $booktitle=$_POST['booktitle'];
+  $summary= $_POST['description'];
+  $author= $_POST['author'];
+  if(isset($_FILES['myfile']['name']) && !empty($_FILES['myfile']['name'])){ 
+    $file = $_FILES['myfile']['name'];
+    $target = "uploads/pdf/".basename($file);
+    $filename=basename($file);
+    $file_tmp =$_FILES['myfile']['tmp_name']; 
+    move_uploaded_file($file_tmp,$target);
+      $sql = "INSERT INTO `books`(`title`, `author`,`description`, `url`) VALUES ('$booktitle','$author','$summary','$filename')";
+        if($connect->query($sql) === TRUE ){
+          move_uploaded_file($file_tmp,$target);
+          echo'<script type="text/javascript">alert("Uploaded successsfully");
+                 window.location.replace("addbook.php");
+               </script>';
+         }
+  }else{ 
+    echo'<script type="text/javascript">alert("An error occurred");
+            window.location.replace("addbook.php");
+         </script>';
+  }  
+}
 
-  
 ?>

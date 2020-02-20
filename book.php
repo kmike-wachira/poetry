@@ -30,7 +30,7 @@ include('backend/connect.php');
     
         <!--Navbar -->
         <header>
-          <nav class="mb-1 navbar navbar-expand-lg navbar-dark  fixed-top " style="background-color:transparent">
+          <nav class="mb-1 navbar navbar-expand-lg navbar-dark  fixed-top " id="navbar">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
               aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,18 +78,18 @@ include('backend/connect.php');
           </header>
 <!--/.Navbar -->
 <!-- carousel -->
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+<div id="carouselExampleFade mt-5" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="assets/img/project/47.jpg" style="height: 655px;"
+        <img class="d-block w-100" src="assets/img/project/47.jpg" style="height: 720px;"
           alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="assets/img/project/79.jpg" style="height: 655px;"
+        <img class="d-block w-100" src="assets/img/project/79.jpg" style="height: 720px;"
           alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="assets/img/project/77.jpg" style="height: 655px;"
+        <img class="d-block w-100" src="assets/img/project/77.jpg" style="height: 720px;"
           alt="Third slide">
       </div>
     </div>
@@ -112,7 +112,7 @@ include('backend/connect.php');
          $resultset=$connect->query($body_sql);
          if($resultset ->num_rows>0):
           while($book_row = $resultset->fetch_assoc()) :?>           
-        <div class="col-lg-3 col-md-6 mt-2  w3-center ">      
+        <div class="col-lg-3 col-md-6 mt-1 mb-2  w3-center ">      
           <div class="card">      
             <!--Card image-->
             <div class="view">                    
@@ -126,7 +126,7 @@ include('backend/connect.php');
               <h4 class="card-title"><?= "Author  :".$book_row['author'] ?></h4>
 
               <!--Text-->
-              <p class="card-text"><?="<b>Description</b> <br>: " .$book_row['description']."Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi provident porro iur." ?></p>
+              <p class="card-text "><?="<b>Description</b> <br>: " .$book_row['description']?></p>
               <a href="<?="uploads/pdf/".$book_row['url'] ?>" target="_new" class="btn btn-primary">Read book</a>
             </div>    
           </div>
@@ -206,7 +206,21 @@ include('backend/connect.php');
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="assets/js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript"></script>
+  <script type="text/javascript">
+   var pos=window.pageYOffset;
+ window.onscroll=function(){
+   var newpos=window.pageYOffset;
+   if(pos >newpos){
+      document.getElementById("navbar").style.backgroundColor="transparent";
+   }else if(newpos>pos){
+    document.getElementById("navbar").style.backgroundColor="#33b5E5";
+    document.getElementById("navbar").style.transition="2s";
+   }else{
+    document.getElementById("navbar").style.backgroundColor="transparent";    
+   }
+ }
+
+  </script>
 
 </body>
 </html>
