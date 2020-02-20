@@ -33,7 +33,7 @@
 <body class="image">
  <header>
     <nav class="navbar navbar-expand-lg navbar-dark  fixed-top " style="background-color: #33B5E5;">
-      <a class="navbar-brand" href="#">Poetic Industry</a>
+      <a class="navbar-brand" href="#">The poet's empire</a>
       <span class="navbar-toggler-icon" id="openNav"onclick="openNav()" ></span>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
         aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,23 +42,23 @@
       <div class="collapse navbar-collapse p-3" id="navbarSupportedContent-555">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home
+            <a class="nav-link" href="index.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="poem.html">Poems</a>
+            <a class="nav-link" href="poem.php">Poems</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="book.html">Books</a>
+            <a class="nav-link" href="book.php">Books</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">Contribute
             </a>
             <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
-              <a class="dropdown-item" href="addbook.html">Add book</a>
-              <a class="dropdown-item" href="addpoem.html"> Add poem</a>
+              <a class="dropdown-item" href="addbook.php">Add book</a>
+              <a class="dropdown-item" href="addpoem.php"> Add poem</a>
             </div>
           </li>
         </ul>
@@ -70,8 +70,8 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-default"
               aria-labelledby="navbarDropdownMenuLink-333">
-              <a class="dropdown-item" href="signup.html">Sign up</a>
-              <a class="dropdown-item" href="signin.html">Login</a>
+              <a class="dropdown-item" href="signup.php">Sign up</a>
+              <a class="dropdown-item" href="signin.php">Login</a>
               <a class="dropdown-item" href="#">Logout</a>
             </div>
           </li>
@@ -85,8 +85,7 @@
       $poem_sql = "SELECT * FROM poems";
       $poem_result = $connect->query($poem_sql);
        if ($poem_result->num_rows > 0) :
-           while($poem_row = $poem_result->fetch_assoc()) :?>
-           
+           while($poem_row = $poem_result->fetch_assoc()) :?>           
             <a href="<?="/poem.php#".$poem_row['id']?>" data-toggle="tooltip" data-placement="top" title="<?=$poem_row['title']?>" style="width:150px; text-transform: lowercase;text-overflow:ellipsis;white-space:nowrap"><?=$poem_row["title"]?></a>
          <?php  endwhile;
           endif;

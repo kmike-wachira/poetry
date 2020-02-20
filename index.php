@@ -83,14 +83,14 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active text-center">
-      <img class="d-block w-100" src="assets/img/project/47.jpg" style="height: 655px;" alt="First slide">
+      <img class="d-block w-100" src="assets/img/project/47.jpg" style="height: 720px;" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="assets/img/project/77.jpg" style="height: 655px;"
+      <img class="d-block w-100" src="assets/img/project/77.jpg" style="height: 720px;"
         alt="Second slide">
     </div>
     <div class="carousel-item image">
-      <img class="d-block w-100" src="assets/img/project/79.jpg" style="height: 655px;"
+      <img class="d-block w-100" src="assets/img/project/79.jpg" style="height: 720px;"
         alt="Third slide">
     </div>
   </div>
