@@ -1,3 +1,6 @@
+<?php
+include('backend/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,30 +87,23 @@
     </h5>
 
     <div class="card-body px-lg-5 pt-0">
-
-      <form class=" p-5">
-
-        <p class="h4 mb-4 text-center"></p>
+      <form class=" p-5" action="" method="POST" enctype="multipart/form-data">
         <div class="d-flex preview-empty mx-auto" id="preview"><img src="" alt="" id="preview_img">
           <p><strong>No image selected</strong></p>
         </div>
         <div class="input-group">
           <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile01"
+            <input type="file" name="image" class="custom-file-input" id="inputGroupFile01 image"
               aria-describedby="inputGroupFileAddon01 customFile new_pic"  accept=".png, .jpg" onchange="handleFiles(this.files)">
             <label class="custom-file-label" for="inputGroupFile01">select poem image</label>
           </div>
         </div> <br>    
-        <input type="text" id="" class="form-control mb-4" placeholder="Enter poem title">
-    
-
+        <input type="text" id="" class="form-control mb-4" name="poem-title" placeholder="Enter poem title" required>
         <div class=" amber-textarea active-amber-textarea-2">
-          <i class="fas fa-pencil-alt prefix"></i>
-          <textarea id="form24" name="editor" class="md-textarea form-control" id="editor" rows="3"></textarea>
-          
+          <i class="fas fa-pencil-alt prefix">Write your poem in here</i>
+          <textarea id="form24" name="poem-body" class="md-textarea form-control" id="editor" rows="3" required></textarea>          
         </div>    
-        <button class="btn btn-info btn-block my-4" type="submit">Add poem</button>   
-      
+        <button class="btn btn-info btn-block my-4" name="add-poem" type="submit">Add poem</button>       
     </form>
     </div>
 </div>
@@ -194,7 +190,7 @@
   
 <script>
   // Replace the <textarea> with a CKEditor
-  CKEDITOR.replace('editor');
+  CKEDITOR.replace('poem-body');
 </script>
 
 </body>
