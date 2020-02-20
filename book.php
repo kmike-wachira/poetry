@@ -1,3 +1,6 @@
+<?php 
+include('backend/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +22,8 @@
   <link rel="stylesheet" href="assets/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/w3.css">
+
 </head>
 <body>
       <!-- project starts here -->
@@ -96,203 +101,44 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
+</div>
 
 <!-- end carousel -->
 <div class="container-fluid">
     <div class="row pt-3">
 
-        <!-- Grid column -->
-        <div class="col-lg-4 col-md-12 mt-2">
-      
-          <!--Card-->
-          <div class="card">
-      
+        <?php
+         $body_sql=" SELECT * FROM books ";
+         $resultset=$connect->query($body_sql);
+         if($resultset ->num_rows>0):
+          while($book_row = $resultset->fetch_assoc()) :?>           
+        <div class="col-lg-3 col-md-6 mt-2  w3-center ">      
+          <div class="card">      
             <!--Card image-->
-            <div class="view">
-              <img src="assets/img/project/77.jpg"  height="150" class="card-img-top"
-                alt="photo">
+            <div class="view">                    
               <a href="#">
                 <div class="mask rgba-white-slight"></div>
               </a>
-            </div>
-      
+            </div>      
             <!--Card content-->
-            <div class="card-body">
-              <!--Title-->
-              <h4 class="card-title">Card title</h4>
+            <div class="card-body">              <!--Title-->
+              <h4 class="card-title" style="text-transform: uppercase;font-weight:bold"><?=$book_row['title'] ?></h4>
+              <h4 class="card-title"><?= "Author  :".$book_row['author'] ?></h4>
+
               <!--Text-->
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
-              <a href="#" class="btn btn-primary">Button</a>
-            </div>
-      
+              <p class="card-text"><?="<b>Description</b> <br>: " .$book_row['description']."Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi provident porro iur." ?></p>
+              <a href="<?="uploads/pdf/".$book_row['url'] ?>" target="_new" class="btn btn-primary">Read book</a>
+            </div>    
           </div>
-          <!--/.Card-->
-      
+          <!--/.Card-->      
         </div>
-        <!-- Grid column -->
-      
-        <!-- Grid column -->
-        <div class="col-lg-4 col-md-12 mt-2">
-      
-            <!--Card-->
-            <div class="card">
-        
-              <!--Card image-->
-              <div class="view">
-                <img src="assets/img/project/77.jpg"  height="150" class="card-img-top"
-                  alt="photo">
-                <a href="#">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-        
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary">Button</a>
-              </div>
-        
-            </div>
-            <!--/.Card-->
-        
-          </div>
-        <!-- Grid column -->
-      
-        <!-- Grid column -->
-        <div class="col-lg-4 col-md-12 mt-2">
-      
-            <!--Card-->
-            <div class="card">
-        
-              <!--Card image-->
-              <div class="view">
-                <img src="assets/img/project/79.jpg"  height="150" class="card-img-top"
-                  alt="photo">
-                <a href="#">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-        
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary">Button</a>
-              </div>
-        
-            </div>
-            <!--/.Card-->
-        
-          </div>
+        <?php 
+        endwhile;
+      endif;
+        ?>
+        <!-- Grid column -->  
       </div>
-      <div class="row pt-3">
-
-        <!-- Grid column -->
-        <div class="col-lg-4 col-md-12 mt-2">
-      
-          <!--Card-->
-          <div class="card">
-      
-            <!--Card image-->
-            <div class="view">
-              <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"  height="150" class="card-img-top"
-                alt="photo">
-              <a href="#">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-      
-            <!--Card content-->
-            <div class="card-body">
-              <!--Title-->
-              <h4 class="card-title">Card title</h4>
-              <!--Text-->
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
-              <a href="#" class="btn btn-primary">Button</a>
-            </div>
-      
-          </div>
-          <!--/.Card-->
-      
-        </div>
-        <!-- Grid column -->
-      
-        <!-- Grid column -->
-        <div class="col-lg-4 col-md-12 mt-2">
-      
-            <!--Card-->
-            <div class="card">
-        
-              <!--Card image-->
-              <div class="view">
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"  height="150" class="card-img-top"
-                  alt="photo">
-                <a href="#">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-        
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary">Button</a>
-              </div>
-        
-            </div>
-            <!--/.Card-->
-        
-          </div>
-        <!-- Grid column -->
-      
-        <!-- Grid column -->
-        <div class="col-lg-4 col-md-12 mt-2">
-      
-            <!--Card-->
-            <div class="card">
-        
-              <!--Card image-->
-              <div class="view">
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"  height="150" class="card-img-top"
-                  alt="photo">
-                <a href="#">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-        
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary">Button</a>
-              </div>
-        
-            </div>
-            <!--/.Card-->
-        
-          </div>
-      </div>
-
-      
-
-
-</div>
+    </div>
       
 <footer class="page-footer font-small cyan darken-3">
   <!-- Footer Elements -->
