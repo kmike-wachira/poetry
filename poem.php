@@ -87,7 +87,7 @@
        if ($poem_result->num_rows > 0) :
            while($poem_row = $poem_result->fetch_assoc()) :?>
            
-            <a href="<?=$poem_row['id']?>" data-toggle="tooltip" data-placement="top" title="<?=$poem_row['title']?>" style="width:150px; text-transform: lowercase;text-overflow:ellipsis;white-space:nowrap"><?=$poem_row["title"]?></a>
+            <a href="<?="/poem.php#".$poem_row['id']?>" data-toggle="tooltip" data-placement="top" title="<?=$poem_row['title']?>" style="width:150px; text-transform: lowercase;text-overflow:ellipsis;white-space:nowrap"><?=$poem_row["title"]?></a>
          <?php  endwhile;
           endif;
     ?>
@@ -108,7 +108,7 @@
      if($resultset ->num_rows>0):
       while($row = $resultset->fetch_assoc()):
         if($row['picture'] == "" || empty($row['picture'])):?>
-        <div class="col-lg-4 col-md-12 mt-2">
+        <div class="col-lg-4 col-md-12 mt-2" id="<?=$row['id']?>">
           <!--Panel-->
           <div class="card">
             <h3 class="card-header light-blue lighten-1 white-text text-uppercase font-weight-bold text-center py-5"><?= $row['title'] ?>
@@ -117,7 +117,7 @@
               <p class="d-flex justify-content-between align-items-center ">
                <pre class="text-muted poem"> <?=$row['body'] ?></pre> 
               </p>
-              <p class="text-small text-muted mb-0 pt-3">By MIKE :posted on:<?= date('M j<\s\up>S</\s\up> Y')?></p>
+              <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by ". getName($connect,$row['id']) ."  On  ". date('M j<\s\up>S</\s\up> Y')?></p>
 
             </div>
           </div>
@@ -125,11 +125,11 @@
       
         </div>
         <?php  else:?>
-    <div class="col-lg-4 col-md-12 mt-2">
+    <div class="col-lg-4 col-md-12 mt-2" id="<?=$row['id']?>">
       <div class="card">
       <!-- Card image -->
       <div class="view overlay">
-        <img class="card-img-top" src="uploads/".<?=$row['picture']?> alt="Card image cap">
+        <img class="card-img-top" height="200" style="background-position: center;background-attachment:fixed" src="<?= "uploads/".$row['picture']?>" alt="Card image cap">
         <a>
           <div class="mask rgba-white-slight"></div>
         </a>
@@ -143,7 +143,7 @@
         <p class="d-flex justify-content-between align-items-center ">
                <pre class="text-muted poem-w-i"> <?=$row['body'] ?></pre> 
         </p>
-        <p class="text-small text-muted mb-0 pt-2">By MIKE :posted on:<?= date('M j<\s\up>S</\s\up> Y')?></p>
+        <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by ". getName($connect,$row['id']) ."  On  ". date('M j<\s\up>S</\s\up> Y')?></p>
     
       </div>
       </div>
