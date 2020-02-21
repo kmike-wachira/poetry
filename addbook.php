@@ -81,33 +81,14 @@ include('backend/connect.php');
  <!-- footer -->
  <?php include('includes/footer.php')?>
 <!-- Footer -->
-
-         
-       
       <!-- End your project here-->
-
- 
 <script src="assets/ckeditor/ckeditor.js"></script>
   <!-- jQuery -->
-  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="assets/js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="assets/js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript"></script>
   
 <script>
   // Replace the <textarea> with a CKEditor
   CKEDITOR.replace('description');
 </script>
-<script type="text/javascript">
-        function poem(){
-          document.getElementById('openNav').style.display="none";
-        }
-</script>
-
 </body>
 </html>

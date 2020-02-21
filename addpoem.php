@@ -24,7 +24,7 @@ include('backend/connect.php');
   <link rel="stylesheet" href="assets/css/edit.css">
 
 </head>
-<body>
+<body onload="poem()">
       <!-- project starts here -->
     
         <!--Navbar -->

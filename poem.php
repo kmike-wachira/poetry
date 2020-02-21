@@ -30,7 +30,7 @@
    <link rel="stylesheet" href="assets/css/poem.css">
   
 </head>
-<body class="" onLoad="poem()">
+<body class="" onLoad="poem1()">
  <!--Navbar -->
  <?php include('includes/navbar.php') ?>
   <!-- navbar -->     
@@ -113,34 +113,17 @@
       <!-- /#page-content-wrapper -->
   
    <!-- footer -->
-<?php include('includes/footer.php')?>
-<!-- Footer -->
-        
-      </div>
-      <script type="text/javascript">
-        function poem(){
-          document.getElementById('openNav').style.display="block";
-        }
-      </script>
-      <script src="assets/js/poem.js"></script>
-       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-       <!-- Menu Toggle Script -->    
+  <?php include('includes/footer.php')?>
+    <!-- Footer -->
+  <script src="assets/js/poem.js"></script>
    <!-- jQuery -->
-   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-   <!-- Bootstrap tooltips -->
-   <script type="text/javascript" src="assets/js/popper.min.js"></script>
-   <!-- Bootstrap core JavaScript -->
-   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-   <!-- MDB core JavaScript -->
-   <script type="text/javascript" src="assets/js/mdb.min.js"></script>
    <!-- Your custom scripts (optional) -->
    <script type="text/javascript">
   // Tooltips Initialization
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
   </script> 
            
-      </body>
+    </body>
   </html>

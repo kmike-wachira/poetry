@@ -99,17 +99,7 @@ include('backend/connect.php');
 <!-- Footer -->      
        
   <!-- End your project here-->
-
- 
-
   <!-- jQuery -->
-  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="assets/js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="assets/js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
   <script type="text/javascript">
    var pos=window.pageYOffset;
@@ -117,19 +107,16 @@ include('backend/connect.php');
     var newpos=window.pageYOffset;
    if(pos >newpos){
       document.getElementById("navbar").style.backgroundColor="transparent";
+    document.getElementById("navbar").style.transition="1s";
+
    }else if(newpos>pos){
     document.getElementById("navbar").style.backgroundColor="#33b5E5";
-    document.getElementById("navbar").style.transition="2s";
+    document.getElementById("navbar").style.transition="1s";
    }else{
     document.getElementById("navbar").style.backgroundColor="transparent";    
    }
- }
+  }
   </script>
-   <script type="text/javascript">
-        function poem(){
-          document.getElementById('openNav').style.display="none";
-        }
-      </script>
 
 </body>
 </html>

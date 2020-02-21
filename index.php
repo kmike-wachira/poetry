@@ -220,23 +220,10 @@
 </div>  
 <!-- end section -->
   <!-- footer -->
-<?php include('includes/footer.php')?>
-<!-- Footer -->
-
-         
-       
+    <?php include('includes/footer.php')?>
+  <!-- Footer -->     
       <!-- End your project here-->
 
- 
-
-  <!-- jQuery -->
-  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="assets/js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="assets/js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
   <script type="text/javascript">
    var pos=window.pageYOffset;
@@ -252,12 +239,10 @@
    }else{
     document.getElementById("navbar").style.backgroundColor="transparent";    
    }
- }
+   }
   </script>
   <!-- owl carosel js -->
-  <script src="jquery.min.js"></script>
-  <script src="assets/OwlCarousel/owl.carousel.min.js"></script>
-  <script src="assets/OwlCarousel/owl.carousel.js"></script>
+
   <script type="">
 var owl = $('.owl-carousel');
 owl.owlCarousel({

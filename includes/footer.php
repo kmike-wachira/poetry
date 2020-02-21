@@ -51,3 +51,24 @@
 
 </footer>
 
+<!-- scripts -->
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="assets/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+    <script src="jquery.min.js"></script>
+  <script src="assets/OwlCarousel/owl.carousel.min.js"></script>
+  <script src="assets/OwlCarousel/owl.carousel.js"></script>
+  <script type="text/javascript">
+        function poem1(){
+          document.getElementById('openNav').style.display="block";
+        }
+  </script>
+    <script type="text/javascript">
+        function poem(){
+          document.getElementById('openNav').style.display="none";
+        }
+      </script>
