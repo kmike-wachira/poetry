@@ -116,7 +116,7 @@
               <p class="d-flex justify-content-between align-items-center ">
                <pre class="text-muted poem"> <?=$row['body'] ?></pre> 
               </p>
-              <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by ". getName($connect,$row['id']) ."  On  ". date('M j<\s\up>S</\s\up> Y')?></p>
+              <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?></p>
 
             </div>
           </div>
@@ -142,7 +142,7 @@
         <p class="d-flex justify-content-between align-items-center ">
                <pre class="text-muted poem-w-i"> <?=$row['body'] ?></pre> 
         </p>
-        <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by ". getName($connect,$row['id']) ."  On  ". date('M j<\s\up>S</\s\up> Y')?></p>
+        <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?></p>
     
       </div>
       </div>

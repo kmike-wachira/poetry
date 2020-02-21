@@ -12,10 +12,11 @@ if(!session_id())session_start();
   // print("Connected");
   
   function getName($connect,$ids){
-    $sql ="SELECT `industry_name` FROM  users WHERE `user id` = $ids";
+    $sql ="SELECT `industry_name` FROM  users WHERE `id` = $ids";
     $result = $connect->query($sql);
-    if($result->num_rows > 0){
-      $industyid = $result->fetch_assoc();
+    if($result){
+      $rown=$result->fetch_assoc();
+      $industyid = $rown['industry_name'];
     }else{
       $industyid ="Poetry industry";
     }

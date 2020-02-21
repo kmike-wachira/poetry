@@ -107,7 +107,7 @@ include('backend/connect.php');
 
       </div>
       <div class="checkbox">
-        <input type="checkbox" name="checkbox"><span>show password </span>
+        <input type="checkbox" onclick="showPassword()" name="checkbox"><span>show password </span>
       </div>
       <button type="submit" name="signup" href="">Submit</button>
       <span><a href="signin.php">Have an account already .Login here</a></span>
