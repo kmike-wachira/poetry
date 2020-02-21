@@ -1,3 +1,6 @@
+<?php
+include('backend/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,29 +83,34 @@
 <!-- form -->
 <div class="main-block mt-4">
     <div class="left-part">
-      <i class="fas fa-graduation-cap"></i>
-      <h1>Register to our courses</h1>
-      <p>W3docs provides free learning materials for programming languages like HTML, CSS, Java Script, PHP etc.</p>
+      <i class="fa fa-registered fa-6x "></i>
+      <h1>Register to our communinty</h1>
+      <p>The best place to showcase your work.</p>
       <div class="btn-group">
-        <a class="btn-item" href="https://www.w3docs.com/learn-html.php">Learn HTML</a>
-        <a class="btn-item" href="https://www.w3docs.com/quiz/#">Select Quiz</a>
+        <a class="btn-item">Write your own poetry</a>
+        <a class="btn-item" >Share your books as .pdf files</a>
       </div>
     </div>
-    <form action="/" autocomplete="off">
+    <form action="" autocomplete="off" method="POST">
       <div class="title">
         <i class="fas fa-pencil-alt"></i> 
         <h2>Register here</h2>
       </div>
       <div class="info">
-        <input class="fname" type="text" name="name" placeholder="Full name">
-        <input type="text" name="name" placeholder="Email">
-        <input type="tel"  pattern="[0-9]{10}" name="name" placeholder="0700000000">
-        <input type="password" name="name" placeholder="Password">     
+        <input class="fname" type="text" name="name" placeholder="Full name" required>
+        <input type="email" name="email" placeholder="Example@domain.com" required>
+        <input type="tel"   name="phone" placeholder="0700000000" required>
+        <input type="text" name="indname" placeholder="the poet" required>
+
+        <input type="password" id="psw" name="password" placeholder="Password" required> 
+        <input type="password" id="cpy" name="cpassword" placeholder="Confirm Password" required>     
+
       </div>
       <div class="checkbox">
-        <input type="checkbox" name="checkbox"><span>I agree to the <a href="https://www.w3docs.com/privacy-policy">Privacy Poalicy for Drharry.</a></span>
+        <input type="checkbox" name="checkbox"><span>show password </span>
       </div>
-      <button type="submit" href="">Submit</button>
+      <button type="submit" name="signup" href="">Submit</button>
+      <span><a href="signin.php">Have an account already .Login here</a></span>
     </form>
   </div>
 <!-- form -->
@@ -173,7 +181,22 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="assets/js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript"></script>
+  <script type="text/javascript">
+    function showPassword() {
+      var x = document.getElementById("psw");
+      var y = document.getElementById("cpsw");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+      if (y.type === "password") {
+        y.type = "text";
+      } else {
+        y.type = "password";
+      }
+    }
+  </script>
 
 </body>
 </html>

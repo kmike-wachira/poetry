@@ -100,6 +100,8 @@ include('backend/connect.php');
         <input type="password" name="password" placeholder="Password" required>     
       </div>
       <button type="submit" name="login" >Sign in</button>
+      <span><a href="signup.php">Dont have an account,create one here</a></span>
+
     </form>
   </div>
 <!-- form -->

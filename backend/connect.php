@@ -1,4 +1,5 @@
 <?php 
+if(!session_id())session_start(); 
   $servername       = "localhost";
   $serverpass       = "";
   $dbname           ="drharry";
@@ -84,37 +85,37 @@ if(isset($_POST['add-book'])){
 
       //Members signup
       if(isset($_POST['signup'])){
-        $memberfirstname=$_POST['memberfirstname'];
-        $memberlastname=$_POST['memberlastname'];
-        $memberemail=$_POST['memberemail'];
-        $memberyos=$_POST['memberyos'];
-        $eveteam=$_POST['eveteam'];
-        $memberphone=$_POST['memberphone'];
-        $memberpassword=md5($_POST['memberpassword']);
-        $memberCpassword=md5($_POST['memberCpassword']);
+        $name=$_POST['name'];
+        $memberemail=$_POST['email'];
+        $memberindname=$_POST['indname'];
+        $memberphone=$_POST['phone'];
+        $memberpassword=md5($_POST['password']);
+        $memberCpassword=md5($_POST['cpassword']);
         if($memberpassword == $memberCpassword){
-        $sql_e = "SELECT * FROM `members` WHERE email='$memberemail'";
-        $res_e = mysqli_query($conn, $sql_e);
+        $sql_e = "SELECT * FROM `users` WHERE `User name`='$memberemail'";
+        $res_e = mysqli_query($connect, $sql_e);
     
         if (mysqli_num_rows($res_e) > 0) {
-          $error ='<div class="alert alert-danger" role="alert">Email already exists !!!!!</div>';
+          echo '<script type="text/javascript">alert("Email is already taken");
+             window.location.replace("signup.php");
+            </script>';
         }else{
-          $membersql="INSERT INTO `members`(`first_name`, `last_name`, `email`, `phone`, `study_year`,`password`,`eve_team_id`)
-           VALUES ('$memberfirstname','$memberlastname','$memberemail','$memberphone','$memberyos','$memberpassword','$eveteam')";
+          $membersql="INSERT INTO `users`(`Full Name`, `industry_name`, `User name`, `password`, `phone`)
+           VALUES ('$name','$memberindname','$memberemail','$memberpassword','$memberphone')";
          }
-          if ($conn->query($membersql) === TRUE) {
-            echo '<script type="text/javascript">alert("Weldone .");
-             window.location.replace("../login.php");
+          if ($connect->query($membersql) === TRUE) {
+            echo '<script type="text/javascript">alert("Weldcome  to the poetic empire.");
+             window.location.replace("signin.php");
             </script>';
           } else {
           // echo "Error: " . $membersql . "<br>" . $conn->error;
           echo '<script type="text/javascript">alert("Something went wrong");
-           window.location.replace("../sign-up.php");
+           window.location.replace("signup.php");
           </script>';
           }
         }else{
           echo '<script type="text/javascript">alert("PASSWORD MISMATCH");
-           window.location.replace("../sign-up.php");
+           window.location.replace("signup.php");
           </script>';
     
         }
@@ -124,13 +125,13 @@ if(isset($_POST['add-book'])){
         $loginemail = $_POST['email'];
         $loginpassword = md5($_POST['password']);
         $loginquery = "SELECT * FROM `users` WHERE `User name`='$loginemail' AND `password`='$loginpassword' LIMIT 1";
-        $login_result = $conn->query($loginquery);
+        $login_result = $connect->query($loginquery);
     
         if ($login_result->num_rows > 0) {
           $row = $login_result->fetch_assoc();
           $_SESSION['user_id'] = $row['id'];
           $_SESSION['user']=$row['industry_name'];
-          header('location:./index.php');
+          header('location:index.php');
           exit;
         }else {
           echo '<script type="text/javascript">alert("Login failed.Try again");
