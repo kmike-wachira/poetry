@@ -10,11 +10,14 @@
         <div class="mb-5 flex-center">
 
           <!-- Facebook -->
-          <a class="fb-ic">
+          <a class="fb-ic" href="http://facebook.com/">
             <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
+           <a class="fb-ic">
+            <i class="fab fa-whatsapp fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
           <!-- Twitter -->
-          <a class="tw-ic">
+          <a class="tw-ic" href="http://twitter.com/">
             <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
           <!--Instagram-->
@@ -22,9 +25,14 @@
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
           <!--Pinterest-->
-          <a class="ins-ic">
+          <a class="ins-ic" href="http://kmike-wachira/">
             <i class="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
+          <a class="ins-ic" href="tel:+254715368989">
+            <i class=" fa fa-phone fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+
+
         </div>
       </div>
       <!-- Grid column -->
@@ -36,8 +44,8 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="" target="_blank">kmikedevelopments || drharry poetry</a>
+  <div class="footer-copyright text-center py-3">© <?=date('Y')?> Copyright:
+    <a href="https://kmike-wachira.github.io/kmike-wachira/" target="_blank">kmikedevelopments || drharry poetry</a>
   </div>
   <!-- Copyright -->
 
