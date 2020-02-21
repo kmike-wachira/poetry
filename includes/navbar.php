@@ -1,4 +1,4 @@
-<header>
+<header class="">
     <nav class="navbar navbar-expand-lg navbar-dark  fixed-top " style="background-color: #33B5E5;" id="navbar">
       <a class="navbar-brand" href="#">The poet's empire</a>
       <span class="navbar-toggler-icon" id="openNav"onclick="openNav()" style="display:none"></span>
@@ -40,7 +40,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-default"
               aria-labelledby="navbarDropdownMenuLink-333">
-              <a class="dropdown-item" href="signup.php">Profile</a>
+              <a class="dropdown-item" href="#">Profile</a>
               <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
           <?php else: ?>

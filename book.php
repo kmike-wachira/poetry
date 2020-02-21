@@ -33,7 +33,7 @@ include('backend/connect.php');
         <!-- navbar -->
     
 <!-- carousel -->
-<div id="carouselExampleFade mt-5" class="carousel slide carousel-fade" data-ride="carousel">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block w-100" src="assets/img/project/47.jpg" style="height: 720px;"

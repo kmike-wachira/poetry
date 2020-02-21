@@ -44,7 +44,7 @@ include('backend/connect.php');
 
     <div class="card-body px-lg-5 pt-0">
 
-      <form class=" p-5" method="POST" action="" enctype="multipart/form-data">
+      <form class=" p-5" method="POST" action="" autocomplete="off" enctype="multipart/form-data">
 
         <p class="h4 mb-4 text-center"></p>
         <div class="input-group">

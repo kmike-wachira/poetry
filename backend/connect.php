@@ -26,6 +26,7 @@ if(!session_id())session_start();
   // add poem to database
   if(isset($_POST['add-poem'])){
       $poem_title=$_POST['poem-title'];
+      $id=$_SESSION['id'];
       $poem_body= $_POST['poem-body'];
     if(isset($_FILES['image']['name']) && !empty($_FILES['image']['name'])){ 
       $image = $_FILES['image']['name'];
@@ -35,7 +36,7 @@ if(!session_id())session_start();
       // $file_size =$_FILES['image']['size'];
       $file_tmp =$_FILES['image']['tmp_name']; 
       move_uploaded_file($file_tmp,$target);
-        $sql = "INSERT INTO `poems`( `poet`, `title`, `picture`, `body`) VALUES ('13','$poem_title','$image','$poem_body')";
+        $sql = "INSERT INTO `poems`( `poet`, `title`, `picture`, `body`) VALUES ('$id','$poem_title','$image','$poem_body')";
           if($connect->query($sql) === TRUE ){
             move_uploaded_file($file_tmp,$target);
             echo'<script type="text/javascript">alert("Uploaded successsfully");
@@ -43,7 +44,7 @@ if(!session_id())session_start();
                  </script>';
            }
     }else{
-      $sql1 = "INSERT INTO `poems`(`poet`, `title`,`body`) VALUES ('13','$poem_title','$poem_body')";
+      $sql1 = "INSERT INTO `poems`(`poet`, `title`,`body`) VALUES ('$id','$poem_title','$poem_body')";
       if($connect->query($sql1) === TRUE ){
         echo'<script type="text/javascript">alert("Uploaded successsfully");
                window.location.replace("addpoem.php");
@@ -80,9 +81,6 @@ if(!session_id())session_start();
             </script>';
       }  
     }
-
-
-
       //Members signup
     if(isset($_POST['signup'])){
         $name=$_POST['name'];
@@ -129,7 +127,7 @@ if(!session_id())session_start();
     
         if ($login_result->num_rows > 0) {
           $row = $login_result->fetch_assoc();
-          $_SESSION['user_id'] = $row['id'];
+          $_SESSION['id'] = $row['id'];
           $_SESSION['user']=$row['industry_name'];
           header('location:index.php');
           exit;

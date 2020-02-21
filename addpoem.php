@@ -41,7 +41,7 @@ include('backend/connect.php');
     </h5>
 
     <div class="card-body px-lg-5 pt-0">
-      <form class=" p-5" action="" method="POST" enctype="multipart/form-data">
+      <form class=" p-5" action="" method="POST" enctype="multipart/form-data" autocomplete="off">
         <div class="d-flex preview-empty mx-auto" id="preview"><img src="" alt="" id="preview_img">
           <p><strong>No image selected</strong></p>
         </div>

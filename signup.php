@@ -34,13 +34,14 @@ include('backend/connect.php');
  
     
 <!-- form -->
-<div class="main-block mt-4">
+<div style="margin-top: 80px"></div>
+<div class="main-block mt-5">
     <div class="left-part">
       <i class="fa fa-registered fa-6x "></i>
       <h1>Register to our communinty</h1>
-      <p>The best place to showcase your work.</p>
+      <p>The best place to showcase your work and learn from others</p>
       <div class="btn-group">
-        <a class="btn-item">Write your own poetry</a>
+        <a class="btn-item">Write your own poems</a>
         <a class="btn-item" >Share your books as .pdf files</a>
       </div>
     </div>
