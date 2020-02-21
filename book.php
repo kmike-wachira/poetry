@@ -7,7 +7,7 @@ include('backend/connect.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>My Portfolio</title>
+  <title>The poetic empire</title>
   <!-- MDB icon -->
   <link rel="icon" href="https://lh3.googleusercontent.com/a-/AAuE7mA0HA30RztANlIRbIuYJ2PNpUlfl7Jr_pnzL7vzlw=s96-cc-rg" type="image/x-icon">
   <!-- Font Awesome -->
@@ -96,27 +96,9 @@ include('backend/connect.php');
     </div>
  <!-- footer -->
  <?php include('includes/footer.php')?>
-<!-- Footer -->      
-       
+<!-- Footer -->            
   <!-- End your project here-->
-  <!-- jQuery -->
-  <!-- Your custom scripts (optional) -->
-  <script type="text/javascript">
-   var pos=window.pageYOffset;
-    window.onscroll=function(){
-    var newpos=window.pageYOffset;
-   if(pos >newpos){
-      document.getElementById("navbar").style.backgroundColor="transparent";
-    document.getElementById("navbar").style.transition="1s";
-
-   }else if(newpos>pos){
-    document.getElementById("navbar").style.backgroundColor="#33b5E5";
-    document.getElementById("navbar").style.transition="1s";
-   }else{
-    document.getElementById("navbar").style.backgroundColor="transparent";    
-   }
-  }
-  </script>
+  <script type="text/javascript" src="assets/js/scroll.js">   </script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>My Portfolio</title>
+  <title>The poetic empire</title>
   <!-- MDB icon -->
   <link rel="icon" href="https://media4.picsearch.com/is?HZTql8mOFWxjTbK38_P8bC182fAkdAqT6RZ1IK9vYQ0&height=255" type="image/x-icon">
   <!-- Font Awesome -->
@@ -225,23 +225,7 @@
       <!-- End your project here-->
 
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript">
-   var pos=window.pageYOffset;
-    window.onscroll=function(){
-   var newpos=window.pageYOffset;
-   if(pos >newpos){
-      document.getElementById("navbar").style.backgroundColor="transparent";
-    document.getElementById("navbar").style.transition="1s";
-    // document.getElementById("navbar").style.color="Black";
-   }else if(newpos>pos){     
-    document.getElementById("navbar").style.backgroundColor="#33b5E5";
-    document.getElementById("navbar").style.transition="1s";
-   }else{
-    document.getElementById("navbar").style.backgroundColor="transparent";    
-   }
-   }
-  </script>
-  <!-- owl carosel js -->
+  <script type="text/javascript" src="assets/js/scroll.js">   </script>
 
   <script type="">
 var owl = $('.owl-carousel');

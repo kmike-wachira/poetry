@@ -7,7 +7,7 @@ include('backend/connect.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>My Portfolio</title>
+  <title>The poetic empire</title>
   <!-- MDB icon -->
   <link rel="icon" href="https://lh3.googleusercontent.com/a-/AAuE7mA0HA30RztANlIRbIuYJ2PNpUlfl7Jr_pnzL7vzlw=s96-cc-rg" type="image/x-icon">
   <!-- Font Awesome -->
