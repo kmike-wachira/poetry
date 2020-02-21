@@ -1,3 +1,4 @@
+<?php include('backend/connect.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

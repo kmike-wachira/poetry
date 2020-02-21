@@ -19,6 +19,7 @@
           <li class="nav-item">
             <a class="nav-link" href="book.php">Books</a>
           </li>
+          <?php if(isset($_SESSION['user'])): ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">Contribute
@@ -28,19 +29,31 @@
               <a class="dropdown-item" href="addpoem.php"> Add poem</a>
             </div>
           </li>
+          <?php endif;?>
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
           <li class="nav-item dropdown">
+          <?php if(isset($_SESSION['user'])): ?>
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user">mike kariuki</i>
+              <i class="fas fa-user"><?= $_SESSION['user']?> </i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-default"
+              aria-labelledby="navbarDropdownMenuLink-333">
+              <a class="dropdown-item" href="signup.php">Profile</a>
+              <a class="dropdown-item" href="logout.php">Logout</a>
+            </div>
+          <?php else: ?>
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user"><?= "sign up" ?> </i>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-default"
               aria-labelledby="navbarDropdownMenuLink-333">
               <a class="dropdown-item" href="signup.php">Sign up</a>
               <a class="dropdown-item" href="signin.php">Login</a>
-              <a class="dropdown-item" href="#">Logout</a>
             </div>
+          <?php endif;?>  
           </li>
         </ul>
       </div>

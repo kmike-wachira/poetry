@@ -43,7 +43,7 @@ include('backend/connect.php');
       <div class="btn-group">
       </div>
     </div>
-    <form action="/" autocomplete="off">
+    <form action="" autocomplete="off" method="POST">
       <div class="title">
         <i class="fas fa-pencil-alt"></i> 
         <h2>Login here</h2>

@@ -16,18 +16,17 @@ if(!session_id())session_start();
     $result = $connect->query($sql);
     if($result){
       $rown=$result->fetch_assoc();
-      $industyid = $rown['industry_name'];
+      $industryid = $rown['industry_name'];
     }else{
-      $industyid ="Poetry industry";
+      $industryid ="Poetry industry";
     }
-    return $industyid;
+    return $industryid;
   }
 
   // add poem to database
   if(isset($_POST['add-poem'])){
-    $poem_title=$_POST['poem-title'];
-    $poem_body= $_POST['poem-body'];
-    // $sql="";
+      $poem_title=$_POST['poem-title'];
+      $poem_body= $_POST['poem-body'];
     if(isset($_FILES['image']['name']) && !empty($_FILES['image']['name'])){ 
       $image = $_FILES['image']['name'];
       // echo basename($image);
@@ -58,34 +57,34 @@ if(!session_id())session_start();
     
   }
 // add a book 
-if(isset($_POST['add-book'])){
-  $booktitle=$_POST['booktitle'];
-  $summary= $_POST['description'];
-  $author= $_POST['author'];
-  if(isset($_FILES['myfile']['name']) && !empty($_FILES['myfile']['name'])){ 
-    $file = $_FILES['myfile']['name'];
-    $target = "uploads/pdf/".basename($file);
-    $filename=basename($file);
-    $file_tmp =$_FILES['myfile']['tmp_name']; 
-    move_uploaded_file($file_tmp,$target);
-      $sql = "INSERT INTO `books`(`title`, `author`,`description`, `url`) VALUES ('$booktitle','$author','$summary','$filename')";
-        if($connect->query($sql) === TRUE ){
-          move_uploaded_file($file_tmp,$target);
-          echo'<script type="text/javascript">alert("Uploaded successsfully");
-                 window.location.replace("addbook.php");
-               </script>';
-         }
-  }else{ 
-    echo'<script type="text/javascript">alert("An error occurred");
-            window.location.replace("addbook.php");
-         </script>';
-  }  
-}
+    if(isset($_POST['add-book'])){
+      $booktitle=$_POST['booktitle'];
+      $summary= $_POST['description'];
+      $author= $_POST['author'];
+      if(isset($_FILES['myfile']['name']) && !empty($_FILES['myfile']['name'])){ 
+        $file = $_FILES['myfile']['name'];
+        $target = "uploads/pdf/".basename($file);
+        $filename=basename($file);
+        $file_tmp =$_FILES['myfile']['tmp_name']; 
+        move_uploaded_file($file_tmp,$target);
+          $sql = "INSERT INTO `books`(`title`, `author`,`description`, `url`) VALUES ('$booktitle','$author','$summary','$filename')";
+            if($connect->query($sql) === TRUE ){
+              move_uploaded_file($file_tmp,$target);
+              echo'<script type="text/javascript">alert("Uploaded successsfully");
+                    window.location.replace("addbook.php");
+                  </script>';
+            }
+      }else{ 
+        echo'<script type="text/javascript">alert("An error occurred");
+                window.location.replace("addbook.php");
+            </script>';
+      }  
+    }
 
 
 
       //Members signup
-      if(isset($_POST['signup'])){
+    if(isset($_POST['signup'])){
         $name=$_POST['name'];
         $memberemail=$_POST['email'];
         $memberindname=$_POST['indname'];

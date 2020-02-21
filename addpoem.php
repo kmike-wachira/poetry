@@ -78,27 +78,12 @@ include('backend/connect.php');
       <!-- End your project here-->
 
  <script src="assets/js/index.js"></script>
-<script src="assets/ckeditor/ckeditor.js"></script>
-  <!-- jQuery -->
-  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="assets/js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="assets/js/mdb.min.js"></script>
-  <!-- Your custom scripts (optional) -->
-  <script type="text/javascript"></script>
-  
-  <script>
+<script src="assets/ckeditor/ckeditor.js">
+
+
   // Replace the <textarea> with a CKEditor
   CKEDITOR.replace('poem-body');
   </script>
-    <script type="text/javascript">
-        function poem(){
-          document.getElementById('openNav').style.display="none";
-        }
-    </script>
 
 </body>
 </html>
