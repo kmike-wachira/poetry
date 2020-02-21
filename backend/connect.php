@@ -80,4 +80,63 @@ if(isset($_POST['add-book'])){
   }  
 }
 
+
+
+      //Members signup
+      if(isset($_POST['signup'])){
+        $memberfirstname=$_POST['memberfirstname'];
+        $memberlastname=$_POST['memberlastname'];
+        $memberemail=$_POST['memberemail'];
+        $memberyos=$_POST['memberyos'];
+        $eveteam=$_POST['eveteam'];
+        $memberphone=$_POST['memberphone'];
+        $memberpassword=md5($_POST['memberpassword']);
+        $memberCpassword=md5($_POST['memberCpassword']);
+        if($memberpassword == $memberCpassword){
+        $sql_e = "SELECT * FROM `members` WHERE email='$memberemail'";
+        $res_e = mysqli_query($conn, $sql_e);
+    
+        if (mysqli_num_rows($res_e) > 0) {
+          $error ='<div class="alert alert-danger" role="alert">Email already exists !!!!!</div>';
+        }else{
+          $membersql="INSERT INTO `members`(`first_name`, `last_name`, `email`, `phone`, `study_year`,`password`,`eve_team_id`)
+           VALUES ('$memberfirstname','$memberlastname','$memberemail','$memberphone','$memberyos','$memberpassword','$eveteam')";
+         }
+          if ($conn->query($membersql) === TRUE) {
+            echo '<script type="text/javascript">alert("Weldone .");
+             window.location.replace("../login.php");
+            </script>';
+          } else {
+          // echo "Error: " . $membersql . "<br>" . $conn->error;
+          echo '<script type="text/javascript">alert("Something went wrong");
+           window.location.replace("../sign-up.php");
+          </script>';
+          }
+        }else{
+          echo '<script type="text/javascript">alert("PASSWORD MISMATCH");
+           window.location.replace("../sign-up.php");
+          </script>';
+    
+        }
+      }
+    //  Members login backend
+      if (isset($_POST['login'])) {
+        $loginemail = $_POST['email'];
+        $loginpassword = md5($_POST['password']);
+        $loginquery = "SELECT * FROM `users` WHERE `User name`='$loginemail' AND `password`='$loginpassword' LIMIT 1";
+        $login_result = $conn->query($loginquery);
+    
+        if ($login_result->num_rows > 0) {
+          $row = $login_result->fetch_assoc();
+          $_SESSION['user_id'] = $row['id'];
+          $_SESSION['user']=$row['industry_name'];
+          header('location:./index.php');
+          exit;
+        }else {
+          echo '<script type="text/javascript">alert("Login failed.Try again");
+           window.location.replace("signin.php");
+          </script>';
+        }
+      }
+
 ?>

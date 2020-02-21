@@ -30,7 +30,7 @@
    <link rel="stylesheet" href="assets/css/poem.css">
   
 </head>
-<body class="image">
+<body class="">
  <header>
     <nav class="navbar navbar-expand-lg navbar-dark  fixed-top " style="background-color: #33B5E5;">
       <a class="navbar-brand" href="#">The poet's empire</a>

@@ -96,25 +96,23 @@ include('backend/connect.php');
         <p class="h4 mb-4 text-center"></p>
         <div class="input-group">
           <div class="custom-file">
-            <input type="file" class="custom-file-input" name="myfile" accept=".pdf" id="inputGroupFile01"
+            <input type="file" class="custom-file-input" required name="myfile" accept=".pdf" id="inputGroupFile01"
               aria-describedby="inputGroupFileAddon01">
             <label class="custom-file-label" for="inputGroupFile01">select a .pdf file</label>
           </div>
         </div> <br>
     
-        <input type="text" id="" name="booktitle" class="form-control mb-4" placeholder="Enter book title">
+        <input type="text" id="" name="booktitle" class="form-control mb-4" placeholder="Enter book title" required>
 
-        <input type="text" id=""  name="author" class="form-control mb-4" placeholder="Enter Authors Name">
+        <input type="text" id=""  name="author" class="form-control mb-4" placeholder="Enter Authors Name" required>
 
     
 
         <div class=" amber-textarea active-amber-textarea-2">
           <i class="fas fa-pencil-alt prefix"></i>
-          <textarea id="form24" name="description" class="md-textarea form-control" id="editor" rows="3" placeholder="Enter a brief book description"></textarea>          
-        </div>
-    
-        <button class="btn btn-info btn-block my-4" name="add-book" type="submit">Add book</button>   
-      
+          <textarea id="form24" name="description" class="md-textarea form-control" id="editor" rows="3" placeholder="Enter a brief book description" required></textarea>          
+        </div>    
+        <button class="btn btn-info btn-block my-4" name="add-book" type="submit">Add book</button>      
     </form>
     </div>
 </div>

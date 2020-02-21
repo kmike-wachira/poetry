@@ -1,3 +1,6 @@
+<?php
+include('backend/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,21 +85,21 @@
 <div class="main-block" style="margin-top: 0;">
     <div class="left-part">
       <i class="fa fa-sign-in" aria-hidden="true"></i>      <h1>Login to artistic empire </h1>
-      <p>Where poetry meets authors.</p>
+      <p>Where poets are made.</p>
       <div class="btn-group">
       </div>
     </div>
     <form action="/" autocomplete="off">
       <div class="title">
         <i class="fas fa-pencil-alt"></i> 
-        <h2>Register here</h2>
+        <h2>Signin here</h2>
       </div>
       <div class="info">
-        <input class="fname" type="email" name="name" placeholder="example@me.com" required>
+        <input class="fname" type="email" name="email" placeholder="example@me.com" required>
         
-        <input type="password" name="name" placeholder="Password" required>     
+        <input type="password" name="password" placeholder="Password" required>     
       </div>
-      <button type="submit" href="/">Submit</button>
+      <button type="submit" name="login" >Sign in</button>
     </form>
   </div>
 <!-- form -->
