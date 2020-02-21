@@ -72,15 +72,10 @@ include('backend/connect.php');
 <!-- end section -->
  <!-- footer -->
  <?php include('includes/footer.php')?>
-<!-- Footer -->
-         
-       
+<!-- Footer -->       
       <!-- End your project here-->
-
- <script src="assets/js/index.js"></script>
+<script src="assets/js/index.js"></script>
 <script src="assets/ckeditor/ckeditor.js">
-
-
   // Replace the <textarea> with a CKEditor
   CKEDITOR.replace('poem-body');
   </script>
