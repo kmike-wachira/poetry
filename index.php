@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/mdb.min.css">
   
   <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css"  media="screen">
 
   <!-- Links to owl carousel -->
   <link rel="stylesheet" href="assets/OwlCarousel/assets/owl.carousel.min.css">
@@ -46,15 +46,15 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active text-center">
-      <img class="d-block w-100" src="assets/img/project/47.jpg" style="height: 720px;" alt="First slide">
+      <img class="d-block w-100 crl" src="assets/img/project/47.jpg" alt="">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="assets/img/project/77.jpg" style="height: 720px;"
-        alt="Second slide">
+      <img class="d-block w-100 crl" src="assets/img/project/77.jpg"
+        alt="">
     </div>
     <div class="carousel-item image">
-      <img class="d-block w-100" src="assets/img/project/79.jpg" style="height: 720px;"
-        alt="Third slide">
+      <img class="d-block w-100 crl" src="assets/img/project/79.jpg"
+        alt="">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

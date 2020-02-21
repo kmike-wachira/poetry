@@ -21,7 +21,7 @@ include('backend/connect.php');
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="assets/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" media="screen">
   <link rel="stylesheet" href="assets/css/w3.css">
 
 </head>
@@ -36,16 +36,14 @@ include('backend/connect.php');
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="assets/img/project/47.jpg" style="height: 720px;"
-          alt="First slide">
+        <img class="d-block w-100 crl" src="assets/img/project/47.jpg" alt="">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="assets/img/project/79.jpg" style="height: 720px;"
-          alt="Second slide">
+        <img class="d-block w-100 crl" src="assets/img/project/79.jpg" alt="">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="assets/img/project/77.jpg" style="height: 720px;"
-          alt="Third slide">
+        <img class="d-block w-100 crl" src="assets/img/project/77.jpg"
+          alt="">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -59,16 +57,16 @@ include('backend/connect.php');
 </div>
 
 <!-- end carousel -->
-<div class="container-fluid">
+<div class="container-fluid background">
     <div class="row pt-3">
 
         <?php
          $body_sql=" SELECT * FROM books ";
          $resultset=$connect->query($body_sql);
-         if($resultset ->num_rows>0):
+         if($resultset):
           while($book_row = $resultset->fetch_assoc()) :?>           
-        <div class="col-lg-3 col-md-6 mt-1 mb-2  w3-center ">      
-          <div class="card">      
+        <div class="col-lg-3 col-md-6 mt-1 mb-2  w3-center " >      
+          <div class="card" style="height: 300px;overflow-x:scroll;">      
             <!--Card image-->
             <div class="view">                    
               <a href="#">

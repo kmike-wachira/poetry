@@ -72,14 +72,17 @@ body {
 }
 /* poem p styling */
 .poem{
-  white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;
-  line-height:normal;
+  white-space: pre-wrap;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 20px;
+  font-size: 14px;
   height: 320px;
   overflow:scroll;
 }
 .poem-w-i{
   white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;
-  line-height:normal;
+  line-height: 20px;
+  font-size: 14px;
   height: 200px;
   overflow:scroll;
 }
