@@ -23,9 +23,6 @@ $data=getAll($connect,$_SESSION['id']);
   <link rel="stylesheet" href="assets/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="assets/css/edit.css">
-  <!-- <link rel="stylesheet" href="assets/css/profile.css"> -->
-
-
 </head>
 <body onload="poem()">
       <!-- project starts here -->
