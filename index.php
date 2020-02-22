@@ -1,5 +1,4 @@
 <?php include('backend/connect.php');
-$myteam = getTeam($connect);
 ?>
 <!DOCTYPE html>
 <html lang="en">
