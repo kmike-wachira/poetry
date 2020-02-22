@@ -4,7 +4,7 @@
     background-size: cover;
     height: 150px;
     /* opacity: 0.1; */
-    background-color: #000; 
+    background-color:cyan; 
     opacity:0.7;
     
     }
@@ -25,7 +25,7 @@
         color: white;
         text-align: center;
         /* opacity: 0.1; */
-        /* background-color: #000;  */
+        background-color:cyan; 
         opacity:0.9;
         background-attachment: fixed;        
     }
