@@ -124,8 +124,12 @@
    while($rown = $result->fetch_assoc()):?>
     <div class="card " >
         <div style=" display: flex;justify-content: center;text-align: center; ">
-        <img class="" style="border-radius:50%;height:150px;width:150px"  src="<?= 'uploads/'.$rown['profilepic']?>"
+        <?php if(empty($rown['profilepic'])):?>
+        <i class="fas fa-user fa-6x"></i>
+       <?php else:?>
+          <img class="" style="border-radius:50%;height:150px;width:150px"  src="<?= 'uploads/'.$rown['profilepic']?>"
           alt="<?= $rown['Full Name']?>">
+        <?php endif;?>      
         </div>
       <!-- Card content -->
       <div class="card-body">
@@ -165,7 +169,7 @@ owl.owlCarousel({
     autoplayHoverPause:true
 });
 $('.play').on('click',function(){
-    owl.trigger('play.owl.autoplay',[1000])
+    owl.trigger('play.owl.autoplay',[2000])
 })
 $('.stop').on('click',function(){
     owl.trigger('stop.owl.autoplay')
