@@ -1,4 +1,6 @@
-<?php include('backend/connect.php');?>
+<?php include('backend/connect.php');
+$myteam = getTeam($connect);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,83 +118,32 @@
   <h1 style="font-weight:bold">Our team</h1>
 <div class="owl-carousel w3-center">
 <!-- Card -->
-<div class="card ">
-
-  <!-- Card image -->
-  <div class="view overlay w3-center">
-    <img class="card-img-top w-25" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
-      alt="Card image cap">
-    <a href="#!">
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
-
-  <!-- Card content -->
-  <div class="card-body">
-
-    <!-- Title -->
-    <h4 class="card-title">Card title</h4>
-    <!-- Text -->
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-      content.</p>
-    <!-- Button -->
-    <a href="#" class="btn btn-primary">Button</a>
-
-  </div>
-
+<?php
+ $sql ="SELECT * FROM  users  WHERE team IS NOT NULL";
+ $result = $connect->query($sql); 
+ if($result->num_rows>0 ):
+   while($rown = $result->fetch_assoc()):?>
+    <div class="card " >
+        <div style=" display: flex;justify-content: center;text-align: center; ">
+        <img class="" style="border-radius:50%;height:150px;width:150px"  src="<?= 'uploads/'.$rown['profilepic']?>"
+          alt="<?= $rown['Full Name']?>">
+        </div>
+      <!-- Card content -->
+      <div class="card-body">
+        <!-- Title -->
+        <h4 class="card-title"><?= $rown['Full Name'] ." "."commonly known as ". $rown['industry_name']?></h4>
+        <!-- Text -->
+        <p class="card-text">Position :<?=$rown['team']?> </p>
+        <!-- Button -->
+        <a href="<?= 'tel:'.$rown['phone'] ?>" class="btn btn-primary"> <i class="fa fa-phone">Contact for assistance</i></a>
+      </div>
 </div>
-<!-- Card -->
-<div class="card ">
+<?php endwhile; 
+ else:?>
+ <h1>We currently don't have a team</h1>
+ <?php endif;  
+?>
 
- <!-- Card image -->
- <div class="view overlay w3-center">
-  <img class="card-img-top w-25" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
-    alt="Card image cap">
-  <a href="#!">
-    <div class="mask rgba-white-slight"></div>
-  </a>
- </div>
-
- <!-- Card content -->
- <div class="card-body">
-
-  <!-- Title -->
-  <h4 class="card-title">Card title</h4>
-  <!-- Text -->
-  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-    content.</p>
-  <!-- Button -->
-  <a href="#" class="btn btn-primary">Button</a>
-
- </div>
-
-</div>
-
-<div class="card w3-center">
-
-  <!-- Card image -->
-  <div class="view overlay w">
-    <img class="card-img-top w-25" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
-      alt="Card image cap">
-    <a href="#!">
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
-
-  <!-- Card content -->
-  <div class="card-body">
-
-    <!-- Title -->
-    <h4 class="card-title">Card title</h4>
-    <!-- Text -->
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-      content.</p>
-    <!-- Button -->
-    <a href="#" class="btn btn-primary">Button</a>
-
-  </div>
-
-</div>
 </div>
 </div>  
 <!-- end section -->
@@ -211,7 +162,7 @@ owl.owlCarousel({
     loop:true,
     margin:10,
     autoplay:true,
-    autoplayTimeout:3000,
+    autoplayTimeout:2000,
     autoplayHoverPause:true
 });
 $('.play').on('click',function(){

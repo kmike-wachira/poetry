@@ -12,7 +12,7 @@ if(!session_id())session_start();
   // print("Connected");
   
   function getName($connect,$ids){
-    $sql ="SELECT `industry_name` FROM  users WHERE `id` = $ids";
+    $sql ="SELECT `industry_name` FROM  users WHERE `id` = $ids ";
     $result = $connect->query($sql);
     if($result){
       $rown=$result->fetch_assoc();
@@ -34,10 +34,8 @@ if(!session_id())session_start();
       return $a;
     }else{
      return "<h1>".'Nothing to display'."</h1>";
-    }
-  
+    }  
   }
-
 
   // add poem to database
   if(isset($_POST['add-poem'])){

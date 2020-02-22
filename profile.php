@@ -1,5 +1,6 @@
 <?php
 include('backend/connect.php');
+$data=getAll($connect,$_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +23,7 @@ include('backend/connect.php');
   <link rel="stylesheet" href="assets/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="assets/css/edit.css">
-  <link rel="stylesheet" href="assets/css/profile.css">
+  <!-- <link rel="stylesheet" href="assets/css/profile.css"> -->
 
 
 </head>
@@ -35,32 +36,34 @@ include('backend/connect.php');
 <div class="row " style="margin-top: 50px;">
  
 <div class="col-md-12 col-lg-3"></div>
-<div class="col-md-12 col-lg-6 mt-5 white" >
+<div class="col-md-12 col-lg-6 mt-5 white" style="border-radius: 30px" >
     
-<form class="border border-light p-5">
+<form class="p-5 " action="" method="POST" enctype="multipart/form-data">
+  <fieldset>
+    <center>
+    <legend style="font-weight:bold "> <h3> <u> MY PROFILE</u></h3>  </legend>
+    </center>
     <div class="row">
-        <div class="d-flex preview-empty mx-auto" id="preview"><img src="" alt="" id="preview_img" style="width:145px;border-radius:12px" alt="no image selected">
-          <p><strong></strong></p>
+        <div class="d-flex preview-empty mx-auto" id="preview"><img src="<?='uploads/'.$data[0][6] ?>" alt="" id="preview_img" style="width:145px;border-radius:12px" alt="no image selected">
         </div>
         <div class="input-group">
           <div class="custom-file w-25" style="width:25px">
-            <input type="file" name="image" class="custom-file-input" id="inputGroupFile01 image"
+            <input type="file" name="pimage" class="custom-file-input" id="inputGroupFile01"
               aria-describedby="inputGroupFileAddon01 customFile new_pic"  accept=".png, .jpg" onchange="handleFiles(this.files)" >
-            <label class="custom-file-label" for="inputGroupFile01">Change your image.</label>
+            <label class="custom-file-label" for="inputGroupFile01">Add or Change your image.</label>
           </div>
         </div> <br>  
-        </div> 
-
-    <p class="h4 mb-4 text-center">Sign in</p>  
+    </div> 
     <label for="materialLoginFormEmail"><p>Name</p></label>
-    <input type="text" id="materialLoginFormEmail" class="form-control" style="border:hidden" > <br>
+    <input type="text" id="materialLoginFormEmail" class="form-control" style="border:hidden" value="<?=$data[0][1]?>" name="name" > <br>
     <label for="materialLoginFormEmail"><p>Email</p></label>
-    <input type="email" id="materialLoginFormEmail" class="form-control" style="border:hidden" > <br>
+    <input type="email" id="materialLoginFormEmail" class="form-control" style="border:hidden" readonly  value="<?=$data[0][3]?>" > <br>
     <label for="materialLoginFormEmail"><p>Industry Name</p></label>
-    <input type="text" id="materialLoginFormEmail" class="form-control" style="border:hidden" > <br>
+    <input type="text" id="materialLoginFormEmail" class="form-control" name="indname" value="<?=$data[0][2]?>"  style="border:hidden" > <br>
     <label for="materialLoginFormEmail"><p>Phone</p></label>
-    <input type="tel" id="materialLoginFormEmail" class="form-control" style="border:hidden" > <br>
-    <button class="btn btn-info btn-block my-4" type="submit">Change</button>
+    <input type="tel" id="materialLoginFormEmail" class="form-control" readonly style="border:hidden" value="<?=$data[0][5]?>" > <br>
+    <button class="btn btn-info btn-block my-4" name="editprofile" type="submit" >Change</button>
+  </fieldset>    
 </form>
       
 </div>

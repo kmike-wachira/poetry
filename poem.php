@@ -9,7 +9,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>The poetic empire</title>
   <!-- MDB icon -->
-  <link rel="icon" href="https://lh3.googleusercontent.com/a-/AAuE7mA0HA30RztANlIRbIuYJ2PNpUlfl7Jr_pnzL7vzlw=s96-cc-rg" type="image/x-icon">
+  <link rel="icon" href="https://media4.picsearch.com/is?HZTql8mOFWxjTbK38_P8bC182fAkdAqT6RZ1IK9vYQ0&height=255" type="image/x-icon">
+
   <!-- Font Awesome -->
   
   <link rel="stylesheet" href="assets/fontawesome/css/all.css">
