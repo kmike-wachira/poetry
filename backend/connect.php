@@ -22,6 +22,22 @@ if(!session_id())session_start();
     }
     return $industryid;
   }
+  // get all data user data
+
+  function getAll($connect,$ids){
+    $sql ="SELECT * FROM  users WHERE `id` = $ids";
+    $result = $connect->query($sql);
+    $a=array();
+    if($result){
+      $rown=$result->fetch_array();
+      array_push($a,$rown);
+      return $a;
+    }else{
+     return "<h1>".'Nothing to display'."</h1>";
+    }
+  
+  }
+
 
   // add poem to database
   if(isset($_POST['add-poem'])){
@@ -137,5 +153,32 @@ if(!session_id())session_start();
           </script>';
         }
       }
+      // edit profile
+      if(isset($_POST['editprofile'])){
+        $pimage = $_FILES['pimage']['name'];
+        $target = "uploads/".basename($pimage);
+        $pimagename=basename($pimage);
+        $pimage_tmp =$_FILES['pimage']['tmp_name']; 
+        $data=getAll($connect,$_SESSION['id']);
+        $name = !empty($_POST['name']) ? $_POST['name'] : $data[0][1];
+        $indname = !empty($_POST['indname']) ? $_POST['indname'] : $data[0][2];
+        if($indname){
+          unset($_SESSION['user']);
+          $_SESSION['user']=$indname;
+        }
+        $id=$_SESSION['id'];
+        $image = basename($_FILES['pimage']['name']) !=="" ? basename($_FILES['pimage']['name']) : $data[0][6] ;
+        $sql="UPDATE `users` SET `Full Name`='$name',`industry_name`='$indname',`profilepic`='$image' WHERE `id`='$id'";
+        if($connect->query($sql)===TRUE){
+        move_uploaded_file($pimage_tmp,$target);
 
+          echo'<script type="text/javascript">alert("Updated successsfully");
+                    window.location.replace("profile.php");
+                  </script>';
+        }else{
+          echo'<script type="text/javascript">alert("Failed to update status");
+                    window.location.replace("profile.php");
+                  </script>';
+        }
+      }
 ?>
