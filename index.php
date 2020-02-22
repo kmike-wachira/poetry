@@ -17,10 +17,8 @@
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <!-- Material Design Bootstrap -->
-  <link rel="stylesheet" href="assets/css/mdb.min.css">
-  
+  <link rel="stylesheet" href="assets/css/mdb.min.css">  
   <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" href="assets/css/style.css"  media="screen">
 
   <!-- Links to owl carousel -->
   <link rel="stylesheet" href="assets/OwlCarousel/assets/owl.carousel.min.css">
@@ -28,6 +26,8 @@
 
   <link rel="stylesheet" href="assets/OwlCarousel/assets/owl.theme.default.min.css">
   <link rel="stylesheet" href="assets/css/w3.css">
+  <link rel="stylesheet" href="assets/css/style.css"  media="screen">
+
 
 
   <style>
@@ -79,7 +79,7 @@
     </p>
   </div>
 
-<div class="image1 p-3 mt-3 my-auto">
+<div class="image1 p-3 mt-3 my-auto" >
   <h1 class="my-auto">The best there is:</h1>
 </div>
 <div class="content text-center py-5">
@@ -114,13 +114,13 @@
 <div class="content text-center py-5">
 <i class="fas fa-users fa fa-5x"></i>
   <h1 style="font-weight:bold">Our team</h1>
-<div class="owl-carousel">
+<div class="owl-carousel w3-center">
 <!-- Card -->
-<div class="card">
+<div class="card ">
 
   <!-- Card image -->
   <div class="view overlay w3-center">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+    <img class="card-img-top w-25" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
       alt="Card image cap">
     <a href="#!">
       <div class="mask rgba-white-slight"></div>
@@ -142,11 +142,11 @@
 
 </div>
 <!-- Card -->
-<div class="card">
+<div class="card ">
 
  <!-- Card image -->
  <div class="view overlay w3-center">
-  <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+  <img class="card-img-top w-25" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
     alt="Card image cap">
   <a href="#!">
     <div class="mask rgba-white-slight"></div>
@@ -168,11 +168,11 @@
 
 </div>
 
-<div class="card">
+<div class="card w3-center">
 
   <!-- Card image -->
-  <div class="view overlay w3-center">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+  <div class="view overlay w">
+    <img class="card-img-top w-25" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
       alt="Card image cap">
     <a href="#!">
       <div class="mask rgba-white-slight"></div>
@@ -192,30 +192,6 @@
 
   </div>
 
-</div><div class="card">
-
-<!-- Card image -->
-<div class="view overlay w3-center">
-  <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
-    alt="Card image cap">
-  <a href="#!">
-    <div class="mask rgba-white-slight"></div>
-  </a>
-</div>
-
-<!-- Card content -->
-<div class="card-body">
-
-  <!-- Title -->
-  <h4 class="card-title">Card title</h4>
-  <!-- Text -->
-  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-    content.</p>
-  <!-- Button -->
-  <a href="#" class="btn btn-primary">Button</a>
-
-</div>
-
 </div>
 </div>
 </div>  
@@ -231,7 +207,7 @@
   <script type="">
 var owl = $('.owl-carousel');
 owl.owlCarousel({
-    items:4,
+    items:1,
     loop:true,
     margin:10,
     autoplay:true,

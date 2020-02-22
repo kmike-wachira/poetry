@@ -12,17 +12,15 @@ include('backend/connect.php');
   <link rel="icon" href="https://lh3.googleusercontent.com/a-/AAuE7mA0HA30RztANlIRbIuYJ2PNpUlfl7Jr_pnzL7vzlw=s96-cc-rg" type="image/x-icon">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="assets/fontawesome/css/all.css">
-  <!-- offline fontawesome link -->
-  <!-- <link rel="stylesheet" href="assets/fontawesome/css/all.css"> -->
-  <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="assets/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" href="assets/css/style.css" media="screen">
   <link rel="stylesheet" href="assets/css/w3.css">
+  <link rel="stylesheet" href="assets/css/style.css" media="screen">
+
 
 </head>
 <body onload="poem()">

@@ -13,7 +13,7 @@
           <a class="fb-ic" href="http://facebook.com/">
             <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-           <a class="fb-ic">
+           <a class="fb-ic" href="https://chat.whatsapp.com/FfKaAPtgfcCFMGpjQS68iX" target="_blank">
             <i class="fab fa-whatsapp fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
           <!-- Twitter -->
@@ -24,7 +24,6 @@
           <a class="ins-ic">
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-          <!--Pinterest-->
           <a class="ins-ic" href="http://kmike-wachira/">
             <i class="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
