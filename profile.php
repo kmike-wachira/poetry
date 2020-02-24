@@ -72,7 +72,7 @@ $data=getAll($connect,$_SESSION['id']);
 
 <!-- end section -->
  <!-- footer -->
- <?php #include('includes/footer.php')?>
+ <?php include('includes/footer.php')?>
 <!-- Footer -->       
       <!-- End your project here-->
 <script src="assets/js/index.js"></script>

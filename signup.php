@@ -57,7 +57,7 @@ include('backend/connect.php');
         <input type="text" name="indname" placeholder="enter your industry name||nickname" required>
 
         <input type="password" id="psw" name="password" placeholder="enter your Password" required> 
-        <input type="password" id="cpy cpsw" name="cpassword" placeholder="Confirm Password" required>     
+        <input type="password" id="cpsw" name="cpassword" placeholder="Confirm Password" required>     
 
       </div>
       <div class="checkbox">
