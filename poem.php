@@ -72,8 +72,9 @@
               <p class="d-flex justify-content-between align-items-center ">
                <pre class="text-muted poem"> <?=$row['body'] ?></pre> 
               </p>
-              <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?></p>
-
+              <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?>
+            <a href="<?= "whatsApp://send?text=".$row['title'] ."By *".getName($connect,$row['poet']) ."*\n on \n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
+                data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg"></i> </a></p>
             </div>
           </div>
           <!--/.Panel-->
@@ -98,7 +99,10 @@
         <p class="d-flex justify-content-between align-items-center ">
                <pre class="text-muted poem-w-i"> <?=$row['body'] ?></pre> 
         </p>
-        <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?></p>
+        <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?>
+        <a href="<?= "whatsApp://send?text=".$row['title'] ." By *".getName($connect,$row['poet']) ."*\n on\n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
+                data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg"></i> </a>
+      </p>
     
       </div>
       </div>
@@ -125,6 +129,44 @@
     $('[data-toggle="tooltip"]').tooltip()
     })
   </script> 
+  <script type="text/javascript">
+  $(document).ready(function() {
+   
+   var isMobile = {
+   Android: function() {
+   return navigator.userAgent.match(/Android/i);
+   },
+   BlackBerry: function() {
+   return navigator.userAgent.match(/BlackBerry/i);
+   },
+   iOS: function() {
+   return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+   },
+   Opera: function() {
+   return navigator.userAgent.match(/Opera Mini/i);
+   },
+   Windows: function() {
+   return navigator.userAgent.match(/IEMobile/i);
+   },
+   any: function() {
+   return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+   }
+   };
+   $(document).on("click", '.whatsapp', function() {
+   if( isMobile.any() ) {
+   var text = $(this).attr("data-text");
+   var url = $(this).attr("data-link");
+   var message = encodeURIComponent(text) + " - " + encodeURIComponent(url);
+   var whatsapp_url = "whatsapp://send?text=" + message;
+   window.location.href = whatsapp_url;
+   } else {
+   alert("Please share this article in mobile device");
+   }
+   });
+   });
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
            
     </body>
   </html>

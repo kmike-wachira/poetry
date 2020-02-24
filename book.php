@@ -63,7 +63,7 @@ include('backend/connect.php');
          $resultset=$connect->query($body_sql);
          if($resultset):
           while($book_row = $resultset->fetch_assoc()) :?>           
-        <div class="col-lg-3 col-md-6 mt-1 mb-2  w3-center " >      
+        <div class="col-lg-3 col-md-6 mt-1 mb-2  w3-center " id="<?=$book_row['id'] ?>">      
           <div class="card" style="height: 300px;overflow-x:scroll;">      
             <!--Card image-->
             <div class="view">                    
@@ -75,10 +75,11 @@ include('backend/connect.php');
             <div class="card-body">              <!--Title-->
               <h4 class="card-title" style="text-transform: uppercase;font-weight:bold"><?=$book_row['title'] ?></h4>
               <h4 class="card-title"><?= "Author  :".$book_row['author'] ?></h4>
-
               <!--Text-->
               <p class="card-text "><?="<b>Description</b> <br>: " .$book_row['description']?></p>
               <a href="<?="uploads/pdf/".$book_row['url'] ?>" target="_new" class="btn btn-primary">Read book</a>
+              <a href="<?= "whatsApp://send?text=Read ".$book_row['title'] ." By *".$book_row['author']."* \n on \n ". "http://poetsaffair.epizy.com/book.php"?>" class="text-success"
+                data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-2x "></i> </a>
             </div>    
           </div>
           <!--/.Card-->      
