@@ -8,6 +8,12 @@ include('backend/connect.php');
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>The poetic empire</title>
+  <meta property="og:title" content="Poets affair">
+<meta property="og:description" content="The best there is to showcase your poetry and writing">
+<meta property="og:url" content="http://poetsaffair.epizy.com/book.php">
+<meta property="og:image" content="https://media4.picsearch.com/is?HZTql8mOFWxjTbK38_P8bC182fAkdAqT6RZ1IK9vYQ0&height=255">
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
   <!-- MDB icon -->
   <link rel="icon" href="https://media4.picsearch.com/is?HZTql8mOFWxjTbK38_P8bC182fAkdAqT6RZ1IK9vYQ0&height=255" type="image/x-icon">
   <!-- Font Awesome -->
@@ -79,7 +85,7 @@ include('backend/connect.php');
               <p class="card-text "><?="<b>Description</b> <br>: " .$book_row['description']?></p>
               <a href="<?="uploads/pdf/".$book_row['url'] ?>" target="_new" class="btn btn-primary">Read book</a>
               <a href="<?= "whatsApp://send?text=Read ".$book_row['title'] ." By *".$book_row['author']."* \n on \n ". "http://poetsaffair.epizy.com/book.php"?>" class="text-success"
-                data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-2x "></i> </a>
+                data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg ">Share</i> </a>
             </div>    
           </div>
           <!--/.Card-->      

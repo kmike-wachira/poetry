@@ -53,17 +53,17 @@ include('backend/connect.php');
       <div class="info">
         <input class="fname" type="text" name="name" placeholder="Full name" required>
         <input type="email" name="email" placeholder="Example@domain.com" required>
-        <input type="tel"   name="phone" placeholder="0700000000" required>
-        <input type="text" name="indname" placeholder="the poet" required>
+        <input type="tel"   name="phone" placeholder="enter your phone no" required>
+        <input type="text" name="indname" placeholder="enter your industry name||nickname" required>
 
-        <input type="password" id="psw" name="password" placeholder="Password" required> 
-        <input type="password" id="cpy" name="cpassword" placeholder="Confirm Password" required>     
+        <input type="password" id="psw" name="password" placeholder="enter your Password" required> 
+        <input type="password" id="cpy cpsw" name="cpassword" placeholder="Confirm Password" required>     
 
       </div>
       <div class="checkbox">
         <input type="checkbox" onclick="showPassword()" name="checkbox"><span>show password </span>
       </div>
-      <button type="submit" name="signup" href="">Submit</button>
+      <button type="submit" name="signup" href="">Sign up</button>
       <span><a href="signin.php">Have an account already .Login here</a></span>
     </form>
   </div>

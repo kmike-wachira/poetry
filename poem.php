@@ -4,7 +4,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta property="og:title" content="Poets affair">
+<meta property="og:description" content="The best there is to showcase your poetry and writing">
+<meta property="og:url" content="http://poetsaffair.epizy.com/poem.php">
+<meta property="og:image" content="https://media4.picsearch.com/is?HZTql8mOFWxjTbK38_P8bC182fAkdAqT6RZ1IK9vYQ0&height=255">
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>The poetic empire</title>
@@ -74,7 +80,7 @@
               </p>
               <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?>
             <a href="<?= "whatsApp://send?text=".$row['title'] ."By *".getName($connect,$row['poet']) ."*\n on \n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
-                data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg"></i> </a></p>
+                data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg">Share</i> </a></p>
             </div>
           </div>
           <!--/.Panel-->
@@ -101,7 +107,7 @@
         </p>
         <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?>
         <a href="<?= "whatsApp://send?text=".$row['title'] ." By *".getName($connect,$row['poet']) ."*\n on\n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
-                data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg"></i> </a>
+                data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg">Share</i> </a>
       </p>
     
       </div>

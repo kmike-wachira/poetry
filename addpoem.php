@@ -47,7 +47,7 @@ include('backend/connect.php');
         <div class="input-group">
           <div class="custom-file">
             <input type="file" name="image" class="custom-file-input" id="inputGroupFile01 image"
-              aria-describedby="inputGroupFileAddon01 customFile new_pic"  accept=".png, .jpg" onchange="handleFiles(this.files)">
+              aria-describedby="inputGroupFileAddon01 customFile new_pic"  accept=".png, .jpg, .jpeg" onchange="handleFiles(this.files)">
             <label class="custom-file-label" for="inputGroupFile01">select poem image</label>
           </div>
         </div> <br>    
@@ -71,13 +71,14 @@ include('backend/connect.php');
 <!-- end section -->
  <!-- footer -->
  <?php include('includes/footer.php')?>
-<!-- Footer -->       
-      <!-- End your project here-->
-<script src="assets/js/index.js"></script>
+<!-- Footer -->    
 <script src="assets/ckeditor/ckeditor.js">
   // Replace the <textarea> with a CKEditor
   CKEDITOR.replace('poem-body');
-  </script>
+  </script>   
+      <!-- End your project here-->
+<script src="assets/js/index.js"></script>
+
 
 </body>
 </html>

@@ -7,6 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>The poetic empire</title>
+  <meta property="og:title" content="Poets affair">
+  <meta property="og:description" content="The best there is to showcase your poetry and writing">
+  <meta property="og:url" content="http://poetsaffair.epizy.com">
+  <meta property="og:image" content="https://media4.picsearch.com/is?HZTql8mOFWxjTbK38_P8bC182fAkdAqT6RZ1IK9vYQ0&height=255">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
   <!-- MDB icon -->
   <link rel="icon" href="https://media4.picsearch.com/is?HZTql8mOFWxjTbK38_P8bC182fAkdAqT6RZ1IK9vYQ0&height=255" type="image/x-icon">
   <!-- Font Awesome -->
@@ -44,16 +51,16 @@
    
 <!-- section-->
 <!--Carousel Wrapper-->
-<div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel">
+<div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel" style="padding-top:0px ">
   <div class="carousel-inner">
     <div class="carousel-item active text-center">
-      <img class="d-block w-100 crl" src="assets/img/project/47.jpg" alt="">
+      <img class="d-block w-100 crl" src="assets/img/project/79.jpg" alt="">
     </div>
     <div class="carousel-item">
       <img class="d-block w-100 crl" src="assets/img/project/77.jpg"
         alt="">
     </div>
-    <div class="carousel-item image">
+    <div class="carousel-item">
       <img class="d-block w-100 crl" src="assets/img/project/79.jpg"
         alt="">
     </div>
