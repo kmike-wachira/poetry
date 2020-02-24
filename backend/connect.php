@@ -41,7 +41,7 @@ if(!session_id())session_start();
   if(isset($_POST['add-poem'])){
       $poem_title=$_POST['poem-title'];
       $id=$_SESSION['id'];
-      $poem_body= $_POST['poem-body'];
+      $poem_body=mysqli_real_escape_string($connect,$_POST['poem-body']);
     if(isset($_FILES['image']['name']) && !empty($_FILES['image']['name'])){ 
       $image = $_FILES['image']['name'];
       // echo basename($image);
