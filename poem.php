@@ -41,14 +41,14 @@
  <!--Navbar -->
  <?php include('includes/navbar.php') ?>
   <!-- navbar -->     
-  <div id="mySidenav" class="sidenav " style="margin-top: 70px;">
+  <div id="mySidenav" class="sidenav " >
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <?php  
       $poem_sql = "SELECT * FROM poems";
       $poem_result = $connect->query($poem_sql);
        if ($poem_result->num_rows > 0) :
            while($poem_row = $poem_result->fetch_assoc()) :?>           
-            <a href="<?="/poem.php#".$poem_row['id']?>" data-toggle="tooltip" data-placement="top" title="<?=$poem_row['title']?>" style="width:150px; text-transform: lowercase;text-overflow:ellipsis;white-space:nowrap"><?=$poem_row["title"]?></a>
+            <a href="<?="/poem.php#".$poem_row['id']?>" onclick="closeNav()" data-toggle="tooltip" data-placement="top" title="<?=$poem_row['title']?>" style="width:150px; text-transform: lowercase;text-overflow:ellipsis;white-space:nowrap"><?=$poem_row["title"]?></a>
          <?php  endwhile;
           endif;
     ?>
@@ -79,7 +79,7 @@
                <pre class="text-muted poem"> <?=$row['body'] ?></pre> 
               </p>
               <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?>
-            <a href="<?= "whatsApp://send?text=".$row['title'] ."By *".getName($connect,$row['poet']) ."*\n on \n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
+            <a href="<?= "whatsApp://send?text=Read ".$row['title'] ."By *".getName($connect,$row['poet']) ."*\n on \n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
                 data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg">Share</i> </a></p>
             </div>
           </div>
@@ -106,7 +106,7 @@
                <pre class="text-muted poem-w-i"> <?=$row['body'] ?></pre> 
         </p>
         <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?>
-        <a href="<?= "whatsApp://send?text=".$row['title'] ." By *".getName($connect,$row['poet']) ."*\n on\n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
+        <a href="<?= "whatsApp://send?text=Read  ".$row['title'] ." By *".getName($connect,$row['poet']) ."*\n on\n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
                 data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg">Share</i> </a>
       </p>
     
@@ -171,8 +171,6 @@
    });
    });
   </script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-           
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>           
     </body>
   </html>
