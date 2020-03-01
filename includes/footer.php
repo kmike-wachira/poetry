@@ -20,14 +20,10 @@
           <a class="tw-ic" href="http://twitter.com/">
             <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <a class="ins-ic" href="http://kmike-wachira/">
+          <a class="ins-ic" target="_blank" href="https://github.com/kmike-wachira/">
             <i class="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-          <a class="ins-ic" href="tel:+254715368989">
+          <a class="ins-ic" target="_blank" href="tel:+254715368989">
             <i class=" fa fa-phone fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
 
