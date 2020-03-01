@@ -57,17 +57,35 @@ $data=getAll($connect,$_SESSION['id']);
     <input type="email" id="materialLoginFormEmail" class="form-control" style="border:hidden" readonly  value="<?=$data[0][3]?>" > <br>
     <label for="materialLoginFormEmail"><p>Industry Name</p></label>
     <input type="text" id="materialLoginFormEmail" class="form-control" name="indname" value="<?=$data[0][2]?>"  style="border:hidden" > <br>
-    <label for="materialLoginFormEmail"><p>Phone</p></label>
+    <label for="materialLoginFormEmail"><p>Phone</p></label>    
     <input type="tel" id="materialLoginFormEmail" class="form-control" readonly style="border:hidden" value="<?=$data[0][5]?>" > <br>
     <button class="btn btn-info btn-block my-4" name="editprofile" type="submit" >Change</button>
   </fieldset>    
-</form>
-      
+</form>      
 </div>
-<div class="col-md-12 col-lg-3"></div>
-
-
+<div class="col-md-12 col-lg-3" style="border-radius: 30px"></div>
 </div>
+
+    <div class=" row ml-3 mt-5">
+    <div class="col-md-12 col-lg-3" ></div>
+    <div class="col-md-12 col-lg-6" style="border-radius: 30px">
+    <?php  
+      $poem_sql = "SELECT * FROM poems where poet='${_SESSION['id']}' ORDER BY time DESC";
+      $poem_result = $connect->query($poem_sql);
+       if ($poem_result->num_rows > 0):?>
+         <div class="list-group">
+          <button type="button" class="list-group-item list-group-item-action active">Your Work</button>
+           <?php while($poem_row = $poem_result->fetch_assoc()) :?>
+           <button type="button" class="list-group-item list-group-item-action">
+            <a href="<?="/edit.php?id=".$poem_row['id']?>" style="width:150px; font-weight:bold;text-transform: lowercase;text-overflow:ellipsis;white-space:nowrap;color:black"><?=$poem_row["title"]?></a><br>
+            </button>
+         <?php  
+        endwhile;?>
+        </div>
+    </div>
+      <?php endif;?>   
+    <div class="col-md-12 col-lg-3" style="border-radius: 30px"></div> 
+    </div>
 <!-- section-->
 
 <!-- end section -->
