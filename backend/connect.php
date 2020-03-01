@@ -179,4 +179,43 @@ if(!session_id())session_start();
                   </script>';
         }
       }
+
+
+      // edit poem
+  if(isset($_POST['edit-poem'])){
+    $id=$_POST['id'];
+    $poem_title = mysqli_real_escape_string($connect,$_POST['poem-title']);
+    $userid=$_SESSION['id'];
+    $poem_body=mysqli_real_escape_string($connect,$_POST['poem-body']);
+    if(isset($_FILES['image']['name']) && !empty($_FILES['image']['name'])){ 
+    $image = $_FILES['image']['name'];
+    // echo basename($image);
+    $target = "uploads/".basename($image);
+    $imagename=basename($image);
+    // $file_size =$_FILES['image']['size'];
+    $file_tmp =$_FILES['image']['tmp_name']; 
+    move_uploaded_file($file_tmp,$target);
+          $sql="UPDATE poems SET title='$poem_title',picture='$imagename',body='$poem_body'  WHERE id='$id'";
+      // $sql = "INSERT INTO `poems`( `poet`, `title`, `picture`, `body`) VALUES ('$userid','$poem_title','$image','$poem_body')";
+        if($connect->query($sql) === TRUE ){
+          move_uploaded_file($file_tmp,$target);
+          echo'<script type="text/javascript">alert("Uploaded successsfully");
+                 window.location.replace("profile.php");
+               </script>';
+         }
+  }else{
+    $sql1="UPDATE poems SET title='$poem_title' ,body='$poem_body' WHERE id='$id'";
+    // $sql1 = "INSERT INTO `poems`(`poet`, `title`,`body`) VALUES ('$userid','$poem_title','$poem_body')";
+    if($connect->query($sql1) === TRUE ){
+      echo'<script type="text/javascript">alert("Uploaded successsfully");
+             window.location.replace("profile.php");
+           </script>';
+     }else{
+      echo'<script type="text/javascript">alert("Poem was not uploaded");
+            window.location.replace("profile.php");
+          </script>';
+     }
+  }
+  
+}
 ?>
