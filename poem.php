@@ -44,11 +44,11 @@
   <div id="mySidenav" class="sidenav " >
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <?php  
-      $poem_sql = "SELECT * FROM poems";
+      $poem_sql = "SELECT * FROM poems  ORDER BY time DESC";
       $poem_result = $connect->query($poem_sql);
        if ($poem_result->num_rows > 0) :
            while($poem_row = $poem_result->fetch_assoc()) :?>           
-            <a href="<?="/poem.php#".$poem_row['id']?>" onclick="closeNav()" data-toggle="tooltip" data-placement="top" title="<?=$poem_row['title']?>" style="width:150px; text-transform: lowercase;text-overflow:ellipsis;white-space:nowrap"><?=$poem_row["title"]?></a>
+            <a href="<?="/poem.php#".$poem_row['id']?>" data-toggle="tooltip" data-placement="top" title="<?=$poem_row['title']?>" style="width:150px; text-transform: lowercase;text-overflow:ellipsis;white-space:nowrap"><?=$poem_row["title"]?></a>
          <?php  endwhile;
           endif;
     ?>
@@ -64,7 +64,7 @@
   <!-- Grid column -->
   <!-- display poems -->
      <?php
-     $poem_body_sql=" SELECT * FROM poems ";
+     $poem_body_sql=" SELECT * FROM poems ORDER BY time DESC";
      $resultset=$connect->query($poem_body_sql);
      if($resultset ->num_rows>0):
       while($row = $resultset->fetch_assoc()):
