@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="assets/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="assets/css/edit.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 
    <!-- Custom styles for this template -->
    <link href="vendor/css/simple-sidebar.css" rel="stylesheet">
@@ -79,7 +79,7 @@
                <pre class="text-muted poem"> <?=$row['body'] ?></pre> 
               </p>
               <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?>
-            <a href="<?= "whatsApp://send?text=Read ".$row['title'] ."By *".getName($connect,$row['poet']) ."*\n on \n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
+            <a href="<?= "whatsApp://send?text=Read ".$row['title'] ."By *".getName($connect,$row['poet']) ."*\n on \n ". "http://poetsaffair.epizy.com/poem.php#".$row['id'] ?>" class="text-success"
                 data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg">Share</i> </a></p>
             </div>
           </div>
@@ -106,7 +106,7 @@
                <pre class="text-muted poem-w-i"> <?=$row['body'] ?></pre> 
         </p>
         <p class="text-small text-muted mb-0 pt-3"><?php echo "Posted by © ". getName($connect,$row['poet']) ."  On  ". date('M j<\s\up>S</\s\up> Y',strtotime($row['time']) )?>
-        <a href="<?= "whatsApp://send?text=Read  ".$row['title'] ." By *".getName($connect,$row['poet']) ."*\n on\n ". "http://poetsaffair.epizy.com/poem.php"?>" class="text-success"
+        <a href="<?= "whatsApp://send?text=Read  ".$row['title'] ." By *".getName($connect,$row['poet']) ."*\n on\n ". "http://poetsaffair.epizy.com/poem.php#".$row['id'] ?>" class="text-success"
                 data-action="share/whatsapp/share"> <i class="fab fa-whatsapp fa-lg">Share</i> </a>
       </p>
     

@@ -63,7 +63,9 @@ $id=$_GET['id'];
           <i class="fas fa-pencil-alt prefix">Change Body</i>
           <textarea id="form24" name="poem-body" class="md-textarea form-control" id="editor" rows="6" required  value="" ><?=$rowdata['body']?></textarea>          
         </div>    
-        <button class="btn btn-info btn-block my-4" name="edit-poem" type="submit">Edit Poem</button>       
+        <button class="btn btn-info btn-block my-4" name="edit-poem" type="submit">Edit Poem🧐</button> 
+        <button class="btn btn-danger btn-block my-4" name="delete-poem" type="submit">Delete😢💔</button>       
+
     </form>
     </div>
     <?php

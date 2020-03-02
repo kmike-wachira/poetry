@@ -44,11 +44,11 @@ body {
     
   }
   
-  @media screen and (min-height: 450px) {
-    .sidenav {margin-top: 80px;}
+  @media screen and (min-height: 400px) {
+    .sidenav {margin-top: 90px;}
     .sidenav a {font-size: 18px;}
   }
-  @media screen and (max-width:700px) {
+  @media screen and (max-width:800px) {
     .sidenav {margin-top: 56px;}
     .sidenav a {font-size: 16px;}
   }
