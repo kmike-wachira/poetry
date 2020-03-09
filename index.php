@@ -87,8 +87,10 @@
     </p>
   </div>
 
-<div class="image1 p-3 mt-3 my-auto" >
-  <h1 class="my-auto">The best there is:</h1>
+<div class="image1 p-3 mt-3 my-auto " style="color: black" >
+  <h1 class="my-auto">Poems Available</h1>
+  <span class="Count " style="font-size: 30px; font-weight:bold;color:white"><?=getNum($connect)?></span>
+<!-- <span class="Count" style="display:none">0</span> -->
 </div>
 <div class="content text-center py-5">
   <h1>What we offer</h1>
@@ -164,6 +166,18 @@
 
   <!-- Your custom scripts (optional) -->
   <script type="text/javascript" src="assets/js/scroll.js">   </script>
+  <script>
+  $('.Count').each(function () {
+  var $this = $(this);
+  jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+    duration: 10000,
+    easing: 'swing',
+    step: function () {
+      $this.text(Math.ceil(this.Counter));
+    }
+  });
+});
+  </script>
 
   <script type="">
 var owl = $('.owl-carousel');

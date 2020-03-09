@@ -1,15 +1,21 @@
 <?php 
 if(!session_id())session_start(); 
-  $servername       = "localhost";
-  $serverpass       = "";
-  $dbname           ="drharry";
-  $serverusername   = "root";
+
+$servername       = "sql209.epizy.com";
+$serverpass       = "sDDubGaf8E";
+$dbname           = "epiz_25238505_drharry";
+$serverusername   = "epiz_25238505";
 
   $connect = new mysqli("$servername","$serverusername","$serverpass","$dbname");
   if($connect->connect_error){
      echo "connection error";
   }
   // print("Connected");
+  function getNum($connect){
+    $sql=" SELECT * FROM poems  ";
+    $value=$connect->query($sql)->num_rows;
+    return $value;  
+  }
   
   function getName($connect,$ids){
     $sql ="SELECT `industry_name` FROM  users WHERE `id` = $ids ";
@@ -178,7 +184,7 @@ if(!session_id())session_start();
         if($connect->query($sql)===TRUE){
         move_uploaded_file($pimage_tmp,$target);
 
-          echo'<script type="text/javascript">alert("Updated successsfully");
+          echo'<script type="text/javascript">alert("Updated successsfully 💪");
                     window.location.replace("profile.php");
                   </script>';
         }else{
@@ -207,7 +213,7 @@ if(!session_id())session_start();
       // $sql = "INSERT INTO `poems`( `poet`, `title`, `picture`, `body`) VALUES ('$userid','$poem_title','$image','$poem_body')";
         if($connect->query($sql) === TRUE ){
           move_uploaded_file($file_tmp,$target);
-          echo'<script type="text/javascript">alert("Uploaded successsfully");
+          echo'<script type="text/javascript">alert("Updated successsfully 💪");
                  window.location.replace("profile.php");
                </script>';
          }
@@ -215,11 +221,11 @@ if(!session_id())session_start();
     $sql1="UPDATE poems SET title='$poem_title' ,body='$poem_body' WHERE id='$id'";
     // $sql1 = "INSERT INTO `poems`(`poet`, `title`,`body`) VALUES ('$userid','$poem_title','$poem_body')";
     if($connect->query($sql1) === TRUE ){
-      echo'<script type="text/javascript">alert("Uploaded successsfully");
+      echo'<script type="text/javascript">alert("Updated successsfully 💪 ");
              window.location.replace("profile.php");
            </script>';
      }else{
-      echo'<script type="text/javascript">alert("Poem was not uploaded");
+      echo'<script type="text/javascript">alert("edit failed 🌋🌋");
             window.location.replace("profile.php");
           </script>';
      }

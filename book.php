@@ -65,7 +65,7 @@ include('backend/connect.php');
     <div class="row pt-3">
 
         <?php
-         $body_sql=" SELECT * FROM books ";
+         $body_sql=" SELECT * FROM books order by date desc";
          $resultset=$connect->query($body_sql);
          if($resultset):
           while($book_row = $resultset->fetch_assoc()) :?>           
